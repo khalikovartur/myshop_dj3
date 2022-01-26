@@ -27,6 +27,9 @@ class Cart(object):
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
             yield item
+            
+    def __len__(self):
+        return sum(item['quantity'] for item in self.cart.values())
              
         
     def add(self, product, quantity=1, override_quantity=False):
@@ -49,14 +52,11 @@ class Cart(object):
             del self.cart[product_id]
             self.save()
             
-   
-    def __len__(self):
-        return sum(item['quantity'] for item in self.cart.values())
-    
-    def get_total_price(self):
-        return sum(Decimal(item['price']) * item['quantity'] 
-                    for item in self.cart.values())
-        
     def clear(self):
         del self.session[settings.CART_SESSION_ID]
         self.save()
+            
+    def get_total_price(self):
+        return sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
+        
+    
