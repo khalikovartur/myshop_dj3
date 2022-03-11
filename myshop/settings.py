@@ -144,10 +144,9 @@ ADMINS = (
     ('artur', 'khalikart@gmail.com')
 )
 
-BRAINTREE_MERCHANT_ID = '4jcxhbs6m25pb9np'
-BRAINTREE_PUBLIC_KEY = 'fwskqhyhk6z42mdy'
-BRAINTREE_PRIVATE_KEY = 'deae5aac3895ce73fa0667a2910c698e'
-
+BRAINTREE_MERCHANT_ID = ''
+BRAINTREE_PUBLIC_KEY = ''
+BRAINTREE_PRIVATE_KEY = ''
 import braintree
 
 BRAINTREE_CONF = braintree.Configuration(
@@ -157,3 +156,4 @@ BRAINTREE_CONF = braintree.Configuration(
     BRAINTREE_PRIVATE_KEY
 )
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
