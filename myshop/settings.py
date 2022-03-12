@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 MIDDLEWARE = [
@@ -144,9 +145,9 @@ ADMINS = (
     ('artur', 'khalikart@gmail.com')
 )
 
-BRAINTREE_MERCHANT_ID = ''
-BRAINTREE_PUBLIC_KEY = ''
-BRAINTREE_PRIVATE_KEY = ''
+BRAINTREE_MERCHANT_ID = '4jcxhbs6m25pb9np'
+BRAINTREE_PUBLIC_KEY = 'fwskqhyhk6z42mdy'
+BRAINTREE_PRIVATE_KEY = 'deae5aac3895ce73fa0667a2910c698e'
 import braintree
 
 BRAINTREE_CONF = braintree.Configuration(
